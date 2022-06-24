@@ -13,7 +13,43 @@
 
 <body>
   <div class="app" id="app">
+    <div class="container">
+      <div class="app__main">
+        <div class="app__title">
+          <h1 class="">Password generator</h1>
+        </div>
 
+        <div class="app__body">
+          <div class="app__password password">
+            <input class="password__input" type="text">
+          </div>
+
+          <div class="app__settings settings">
+            <div class="settings__row">
+              <input id="numbers" type="checkbox">
+              <label for="numbers">Numbers</label>
+              <span class="settings__custom"></span>
+            </div>
+
+            <div class="settings__row">
+              <input id="symbols" type="checkbox">
+              <label for="symbols">Symbols</label>
+              <span class="settings__custom"></span>
+            </div>
+
+            <div class="settings__row">
+              <label for="range">Password length</label>
+              <input id="range" type="range" min="8" max="22" value="8" step="1">
+              <span class="settings__range">8</span>
+            </div>
+
+            <div class="settings__row">
+              <button class="settings__btn">Generate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="js/app.min.js"></script>
