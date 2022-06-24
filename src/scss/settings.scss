@@ -1,0 +1,9 @@
+$container: rem(1300);
+$ff: '';
+$fw: 400;
+$bg: #fff;
+$mc: rgb(44, 44, 44);
+
+html {scroll-behavior: smooth; font-size: 100%;}
+body {font-family: $ff;font-weight: $fw;color: $mc; background-color: $bg;}
+.container {max-width: $container;margin: 0 auto;padding: 0 rem(15);}
