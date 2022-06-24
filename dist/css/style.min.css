@@ -79,16 +79,186 @@ html {
 }
 
 body {
-  font-family: "";
-  font-weight: 400;
-  color: rgb(44, 44, 44);
-  background-color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgba(6, 44, 31, 0.685);
 }
 
 .container {
-  max-width: 81.25rem;
+  max-width: 27.5rem;
   margin: 0 auto;
-  padding: 0 0.9375rem;
+  padding: 0 0.625rem;
 }
 
-/*  sections  */
+/*  app  */
+.app__main {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+@media (max-width: 1250px) {
+  .app__main {
+    margin-top: calc(30px + 20 * ((100vw - 320px) / 930));
+  }
+}
+@media (max-width: 1250px) {
+  .app__main {
+    margin-bottom: calc(30px + 20 * ((100vw - 320px) / 930));
+  }
+}
+.app__title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+}
+@media (max-width: 1250px) {
+  .app__title {
+    font-size: calc(30px + 12 * ((100vw - 320px) / 930));
+  }
+}
+.app__password {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 0.5rem;
+  transition: 0.3s ease-out;
+}
+@media (max-width: 1250px) {
+  .app__password {
+    height: calc(50px + 10 * ((100vw - 320px) / 930));
+  }
+}
+@media (max-width: 1250px) {
+  .app__password {
+    margin-top: calc(20px + 10 * ((100vw - 320px) / 930));
+  }
+}
+@media (max-width: 1250px) {
+  .app__password {
+    margin-bottom: calc(20px + 10 * ((100vw - 320px) / 930));
+  }
+}
+.app__password::before {
+  position: absolute;
+  cursor: pointer;
+  content: "coppy";
+  opacity: 0.65;
+  right: 0.625rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.app__settings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.password__input {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.13);
+  color: rgba(6, 44, 31, 0.685);
+  border-radius: 0.5rem;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  transition: 0.3s ease-out;
+}
+@media (max-width: 1250px) {
+  .password__input {
+    padding: calc(5px + 5 * ((100vw - 320px) / 930));
+  }
+}
+@media (max-width: 1250px) {
+  .password__input {
+    font-size: calc(15px + 5 * ((100vw - 320px) / 930));
+  }
+}
+.password:hover {
+  box-shadow: 0 0 15px 5px rgba(6, 44, 31, 0.12);
+}
+.password:hover .password__input {
+  box-shadow: inset 0 0 15px 5px rgba(6, 44, 31, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.settings__row {
+  position: relative;
+}
+.settings__row:nth-child(3) {
+  margin: 1.25rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.25rem;
+}
+.settings__row:nth-child(4) {
+  margin: 1.25rem 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+.settings__checkbox {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  width: 2.1875rem;
+}
+.settings__checkbox:checked ~ .settings__custom::before {
+  left: 14px;
+  background: rgba(11, 104, 71, 0.685);
+}
+.settings__custom {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6.25rem;
+  width: 1.875rem;
+  height: 1rem;
+}
+.settings__custom::before {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background: rgba(6, 44, 31, 0.685);
+  transition: 0.2s ease;
+}
+.settings__range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.13);
+  border-radius: 100px;
+}
+.settings__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(11, 104, 71, 0.685);
+}
+.settings__label {
+  font-weight: 500;
+  cursor: pointer;
+}
+.settings__btn {
+  background: rgba(6, 44, 31, 0.685);
+  color: #fff;
+  width: 6.25rem;
+  height: 2rem;
+  border-radius: 0.4375rem;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+.settings__btn:hover {
+  background: rgba(11, 104, 71, 0.685);
+}
