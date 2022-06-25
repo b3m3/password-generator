@@ -131,6 +131,7 @@ body {
 
 .app__password::before {
   position: absolute;
+  pointer-events: none;
   cursor: pointer;
   content: "coppy";
   opacity: 0.65;
