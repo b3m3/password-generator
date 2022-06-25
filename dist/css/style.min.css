@@ -188,6 +188,28 @@ body {
   box-shadow: inset 0 0 15px 5px rgba(6, 44, 31, 0.12);
   border: 1px solid rgba(0, 0, 0, 0);
 }
+.password:active {
+  box-shadow: 0 0 15px 5px rgba(0, 255, 34, 0.2);
+}
+.password:active .password__input {
+  box-shadow: inset 0 0 15px 5px rgba(0, 255, 34, 0.2);
+  border: 1px solid rgba(0, 255, 34, 0.4);
+}
+.password__hover {
+  position: absolute;
+  opacity: 0;
+  right: -0.3125rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s;
+  pointer-events: none;
+}
+.password__hover.active {
+  opacity: 1;
+  font-size: 0.9375rem;
+  right: -0.3125rem;
+  top: -0.75rem;
+}
 
 .settings__row {
   position: relative;

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const checkboxNumber = document.querySelector('#numbers');
   const checkboxSymbol = document.querySelector('#symbols');
+  const inputPassword = document.querySelector('.password__input');
   const counter = document.querySelector('.range-label span');
   const range = document.querySelector('#range');
   const button = document.querySelector('.settings__btn');
@@ -17,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   range.oninput = () => counter.textContent = range.value;
 
   button.addEventListener('click', () => {
-    const inputPassword = document.querySelector('.password__input');
     let password = [];
 
     for (let index = 0; index < +range.value; index++) {
@@ -38,5 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mixPassword = () => Math.random() - 0.5;
 
     return inputPassword.value = result.sort(mixPassword).join('');
+  });
+
+  inputPassword.addEventListener('click', () => {
+
   });
 });
