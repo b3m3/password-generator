@@ -155,6 +155,7 @@ body {
 
 .password__input {
   cursor: pointer;
+  text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.13);
   color: rgba(6, 44, 31, 0.685);
   border-radius: 0.5rem;
@@ -172,7 +173,12 @@ body {
 }
 @media (max-width: 1250px) {
   .password__input {
-    font-size: calc(15px + 5 * ((100vw - 320px) / 930));
+    font-size: calc(16px + 4 * ((100vw - 320px) / 930));
+  }
+}
+@media (max-width: 425px) {
+  .password__input {
+    text-align: left;
   }
 }
 .password:hover {
@@ -261,4 +267,8 @@ body {
 }
 .settings__btn:hover {
   background: rgba(11, 104, 71, 0.685);
+}
+.settings .range-label {
+  font-weight: 500;
+  pointer-events: none;
 }

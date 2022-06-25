@@ -1,21 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  const counterEl = document.querySelector('.range-label span');
-  const numbersEl = document.querySelector('#numbers');
-  const symbolsEl = document.querySelector('#symbols');
-  const rangeEl = document.querySelector('#range');
-  const buttonEl = document.querySelector('.settings__btn');
+  const checkboxNumber = document.querySelector('#numbers');
+  const checkboxSymbol = document.querySelector('#symbols');
+  const counter = document.querySelector('.range-label span');
+  const range = document.querySelector('#range');
+  const button = document.querySelector('.settings__btn');
 
   const numbers = '0123456789';
   const letters = 'abcdefghijklmnopqrstuvwxyz';
   const symbols = ' !@#$%^&*()_-+={}[];:|.,?/~`\'';
 
-  let password = [];
-
   const random = str => 
     str[Math.floor(Math.random() * str.length)];
 
+  range.oninput = () => counter.textContent = range.value;
 
-  rangeEl.oninput = () => counterEl.textContent = rangeEl.value;
+  button.addEventListener('click', () => {
+    const inputPassword = document.querySelector('.password__input');
+    let password = [];
+
+    for (let index = 0; index < +range.value; index++) {
+      password.push(random(letters));
+      password.push(random(letters.toUpperCase()));
+
+      if (checkboxNumber.checked) {
+        password.push(random(numbers));
+      }
+
+      if (checkboxSymbol.checked) {
+        password.push(random(symbols));
+      }
+    }
+
+    const result = password.slice(0, +range.value);
+
+    const mixPassword = () => Math.random() - 0.5;
+
+    return inputPassword.value = result.sort(mixPassword).join('');
+  });
 });
