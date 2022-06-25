@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    inputPassword.classList.add('click');
+
     const result = password.slice(0, +range.value);
 
     const mixPassword = () => Math.random() - 0.5;
@@ -41,6 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   inputPassword.addEventListener('click', () => {
+    const showCoppyed = document.querySelector('.password__hover');
 
+    if (inputPassword.value.length > 1) {
+      navigator.clipboard.writeText(inputPassword.value);
+
+      showCoppyed.classList.add('active');
+      setTimeout(() => showCoppyed.classList.remove('active'), 680);
+    }
   });
 });
