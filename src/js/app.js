@@ -12,12 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const letters = 'abcdefghijklmnopqrstuvwxyz';
   const symbols = ' !@#$%^&*()_-+={}[];:|.,?/~`\'';
 
-  const random = str => 
-    str[Math.floor(Math.random() * str.length)];
+  const random = str => str[Math.floor(Math.random() * str.length)];
 
-  range.oninput = () => counter.textContent = range.value;
+  const showRangeValue = () => counter.textContent = range.value;
 
-  button.addEventListener('click', () => {
+  const createPassword = () => {
     let password = [];
 
     for (let index = 0; index < +range.value; index++) {
@@ -40,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mixPassword = () => Math.random() - 0.5;
 
     return inputPassword.value = result.sort(mixPassword).join('');
-  });
+  }
 
-  inputPassword.addEventListener('click', () => {
+  const getPassword = () => {
     const showCoppyed = document.querySelector('.password__hover');
 
     if (inputPassword.value.length > 1) {
@@ -51,5 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
       showCoppyed.classList.add('active');
       setTimeout(() => showCoppyed.classList.remove('active'), 680);
     }
-  });
+  }
+
+  range.addEventListener('input', showRangeValue);
+  button.addEventListener('click', createPassword);
+  inputPassword.addEventListener('click', getPassword);
 });
